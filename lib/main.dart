@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,12 +32,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int rollNumber = 0;
+  int dice1 = 0;
+  int dice2 = 0;
+  bool visible = false;
 
-  void _incrementCounter() {
+  int rollDice() {
+    var value = Random();
     setState(() {
-      _counter++;
+      visible = true;
+      rollNumber = value.nextInt(6) + 1;
     });
+    return rollNumber;
+  }
+
+  int rollTwoDices() {
+    rollNumber = 0;
+    setState(() {
+      dice1 = rollDice();
+    });
+    setState(() {
+      dice2 = rollDice();
+    });
+    setState(() {
+      rollNumber = dice1 + dice2;
+    });
+    return rollNumber;
   }
 
   @override
@@ -49,18 +71,58 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Visibility(
+              visible: visible,
+              child: Column(
+                children: [
+                  const Text(
+                    'The roll number',
+                  ),
+                  Text(
+                    '$rollNumber',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    const Text(
+                      'Dado 1',
+                    ),
+                    Text(
+                      '$dice1',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    const Text(
+                      'Dado 2',
+                    ),
+                    Text(
+                      '$dice2',
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ],
+                )
+              ],
             ),
+            FilledButton(onPressed: rollDice, child: const Text('Rolar dado')),
+            FilledButton(
+                onPressed: rollTwoDices, child: const Text('Rolar 2 dados'))
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: rollDice,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
