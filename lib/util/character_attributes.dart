@@ -6,15 +6,25 @@ int setSkill(skillValue) {
 }
 
 int setStamina(staminaValue) {
-  var dice1 = rollDice(0);
-  var dice2 = rollDice(0);
-  print(dice1);
-  print(dice2);
-  staminaValue = (dice1 + dice2) + 12;
+  staminaValue = rollDice(0) + rollDice(0) + 12;
   return staminaValue;
 }
 
 int setLuck(luckValue) {
   luckValue = rollDice(luckValue) + 6;
   return luckValue;
+}
+
+initialItems() {
+  return ['Sword', 'shield'];
+}
+
+int addGold(goldValue, valueToAdd) {
+  goldValue += valueToAdd;
+  return goldValue;
+}
+
+int removeGold(goldValue, valueToRemove) {
+  goldValue -= valueToRemove;
+  return goldValue;
 }

@@ -16,6 +16,7 @@ class _TheWarlockOfFiretopMountainState
   int staminaValue = 0;
   int luckValue = 0;
   int provisionsValue = 5;
+  int goldValue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,7 @@ class _TheWarlockOfFiretopMountainState
               ],
             ),
             Text('Provisions: $provisionsValue'),
+            const Text('Items'),
             ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -62,6 +64,55 @@ class _TheWarlockOfFiretopMountainState
                 });
               },
               child: const Text('Set initial Status'),
+            ),
+            const Divider(thickness: 2),
+            const Text('Gold'),
+            Text('$goldValue GP'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          goldValue = addGold(goldValue, 1);
+                        });
+                      },
+                      child: const Text('Add 1'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          goldValue = addGold(goldValue, 5);
+                        });
+                      },
+                      child: const Text('Add 5'),
+                    ),
+                  ],
+                ),
+                const SizedBox(width: 20),
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          goldValue = removeGold(goldValue, 1);
+                        });
+                      },
+                      child: const Text('Remove 1'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          goldValue = removeGold(goldValue, 5);
+                        });
+                      },
+                      child: const Text('Remove 5'),
+                    ),
+                  ],
+                )
+              ],
             ),
             const Divider(thickness: 2),
           ],
