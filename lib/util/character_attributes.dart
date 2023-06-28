@@ -38,3 +38,5 @@ int eatProvision(provisionValue) {
   provisionValue -= 1;
   return provisionValue;
 }
+
+battle(currentSkill, currentEnergy, monsterSkill, monsterStamina) {}

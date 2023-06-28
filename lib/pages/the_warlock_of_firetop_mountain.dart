@@ -13,10 +13,15 @@ class _TheWarlockOfFiretopMountainState
     extends State<TheWarlockOfFiretopMountain> {
   int diceValue = 0;
   int skillValue = 0;
+  int currentSkill = 0;
   int staminaValue = 0;
+  int currentStamina = 0;
   int luckValue = 0;
+  int currentLuck = 0;
   int provisionsValue = 0;
   int goldValue = 0;
+  int monsterSkill = 0;
+  int monsterStamina = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -137,6 +142,24 @@ class _TheWarlockOfFiretopMountainState
               ],
             ),
             const Divider(thickness: 2),
+            const Text('Battle'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    const Text('Monster data'),
+                    Text('Skill: $monsterSkill'),
+                    Text('Energy: $monsterStamina'),
+                  ],
+                ),
+                const SizedBox(width: 15),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Roll for battle'),
+                )
+              ],
+            ),
           ],
         ),
       ),
