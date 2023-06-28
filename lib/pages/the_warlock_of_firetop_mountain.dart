@@ -15,6 +15,7 @@ class _TheWarlockOfFiretopMountainState
   int skillValue = 0;
   int staminaValue = 0;
   int luckValue = 0;
+  int provisionsValue = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,7 @@ class _TheWarlockOfFiretopMountainState
                 Text('Luck: $luckValue'),
               ],
             ),
+            Text('Provisions: $provisionsValue'),
             ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -61,7 +63,7 @@ class _TheWarlockOfFiretopMountainState
               },
               child: const Text('Set initial Status'),
             ),
-            const Divider(thickness: 2)
+            const Divider(thickness: 2),
           ],
         ),
       ),
