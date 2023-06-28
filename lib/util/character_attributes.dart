@@ -28,3 +28,13 @@ int removeGold(goldValue, valueToRemove) {
   goldValue -= valueToRemove;
   return goldValue;
 }
+
+int addProvision(provisionValue) {
+  provisionValue += 1;
+  return provisionValue;
+}
+
+int eatProvision(provisionValue) {
+  provisionValue -= 1;
+  return provisionValue;
+}

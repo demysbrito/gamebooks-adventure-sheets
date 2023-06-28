@@ -15,7 +15,7 @@ class _TheWarlockOfFiretopMountainState
   int skillValue = 0;
   int staminaValue = 0;
   int luckValue = 0;
-  int provisionsValue = 5;
+  int provisionsValue = 0;
   int goldValue = 0;
 
   @override
@@ -54,6 +54,28 @@ class _TheWarlockOfFiretopMountainState
               ],
             ),
             Text('Provisions: $provisionsValue'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      provisionsValue = eatProvision(provisionsValue);
+                    });
+                  },
+                  child: const Text('Eat provision'),
+                ),
+                const SizedBox(width: 15),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      provisionsValue = addProvision(provisionsValue);
+                    });
+                  },
+                  child: const Text('Add provision'),
+                ),
+              ],
+            ),
             const Text('Items'),
             ElevatedButton(
               onPressed: () {
