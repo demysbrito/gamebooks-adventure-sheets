@@ -57,8 +57,8 @@ class _TheWarlockOfFiretopMountainState
               onPressed: () {
                 setState(() {
                   skillValue = setSkill(skillValue);
-                  staminaValue = setSkill(staminaValue);
-                  luckValue = setSkill(luckValue);
+                  staminaValue = setStamina(staminaValue);
+                  luckValue = setLuck(luckValue);
                 });
               },
               child: const Text('Set initial Status'),

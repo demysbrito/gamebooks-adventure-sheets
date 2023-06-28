@@ -6,7 +6,11 @@ int setSkill(skillValue) {
 }
 
 int setStamina(staminaValue) {
-  staminaValue = rollDice(staminaValue) + rollDice(staminaValue) + 12;
+  var dice1 = rollDice(0);
+  var dice2 = rollDice(0);
+  print(dice1);
+  print(dice2);
+  staminaValue = (dice1 + dice2) + 12;
   return staminaValue;
 }
 
