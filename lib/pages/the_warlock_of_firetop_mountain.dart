@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gamebooks_adventure_sheets/util/character_attributes.dart';
-import 'package:gamebooks_adventure_sheets/util/dice_roll.dart';
 
 class TheWarlockOfFiretopMountain extends StatefulWidget {
   const TheWarlockOfFiretopMountain({super.key});
@@ -22,6 +21,9 @@ class _TheWarlockOfFiretopMountainState
   int goldValue = 0;
   int monsterSkill = 0;
   int monsterStamina = 0;
+  int currentHistory = 0;
+
+  bool visibilityInitialStatus = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,23 +34,8 @@ class _TheWarlockOfFiretopMountainState
       body: Center(
         child: Column(
           children: [
-            Text(
-              'Valor do dado: $diceValue',
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  diceValue = rollDice(diceValue);
-                });
-              },
-              child: const Text('Roll dice'),
-            ),
-            const Divider(
-              thickness: 2,
-            ),
             const Text('Valores iniciais'),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Skill: $skillValue'),
@@ -56,6 +43,18 @@ class _TheWarlockOfFiretopMountainState
                 Text('Stamina: $staminaValue'),
                 const SizedBox(width: 10),
                 Text('Luck: $luckValue'),
+              ],
+            ),
+            const Divider(thickness: 2),
+            const Text('Valores atuais'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Skill: $currentSkill'),
+                const SizedBox(width: 10),
+                Text('Stamina: $currentStamina'),
+                const SizedBox(width: 10),
+                Text('Luck: $currentLuck'),
               ],
             ),
             Text('Provisions: $provisionsValue'),
@@ -81,16 +80,22 @@ class _TheWarlockOfFiretopMountainState
                 ),
               ],
             ),
-            const Text('Items'),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  skillValue = setSkill(skillValue);
-                  staminaValue = setStamina(staminaValue);
-                  luckValue = setLuck(luckValue);
-                });
-              },
-              child: const Text('Set initial Status'),
+            Visibility(
+              visible: visibilityInitialStatus,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    skillValue = setSkill(skillValue);
+                    currentSkill = skillValue;
+                    staminaValue = setStamina(staminaValue);
+                    currentStamina = staminaValue;
+                    luckValue = setLuck(luckValue);
+                    currentLuck = luckValue;
+                    visibilityInitialStatus = false;
+                  });
+                },
+                child: const Text('Set initial Status'),
+              ),
             ),
             const Divider(thickness: 2),
             const Text('Gold'),
@@ -148,18 +153,73 @@ class _TheWarlockOfFiretopMountainState
               children: [
                 Column(
                   children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          monsterSkill -= 1;
+                        });
+                      },
+                      child: const Text('Skill -1'),
+                    ),
+                    const SizedBox(width: 15),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          monsterSkill += 1;
+                        });
+                      },
+                      child: const Text('Skill +1'),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
                     const Text('Monster data'),
                     Text('Skill: $monsterSkill'),
                     Text('Energy: $monsterStamina'),
                   ],
                 ),
-                const SizedBox(width: 15),
+                Column(
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            monsterStamina -= 1;
+                          });
+                        },
+                        child: const Text('Stamina -1')),
+                    const SizedBox(width: 15),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            monsterStamina += 1;
+                          });
+                        },
+                        child: const Text('Stamina +1')),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 ElevatedButton(
                   onPressed: () {},
                   child: const Text('Roll for battle'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      currentStamina -= 2;
+                      monsterSkill = 0;
+                      monsterStamina = 0;
+                    });
+                  },
+                  child: const Text('Run from battle'),
                 )
               ],
             ),
+            const Divider(thickness: 2)
           ],
         ),
       ),

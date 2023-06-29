@@ -16,7 +16,7 @@ int setLuck(luckValue) {
 }
 
 initialItems() {
-  return ['Sword', 'shield'];
+  return ['Sword', 'Leather armor', 'Backpack'];
 }
 
 int addGold(goldValue, valueToAdd) {
@@ -39,4 +39,19 @@ int eatProvision(provisionValue) {
   return provisionValue;
 }
 
-battle(currentSkill, currentEnergy, monsterSkill, monsterStamina) {}
+battle(currentSkill, currentEnergy, monsterSkill, monsterStamina) {
+  var monsterAttack = rollDice(0) + rollDice(0) + monsterSkill;
+  var heroAttack = rollDice(0) + rollDice(0) + currentSkill;
+  if (heroAttack > monsterAttack) {
+    return 'Hero win';
+  } else if (monsterSkill > heroAttack) {
+    return 'Monster win';
+  } else {
+    return 'Draw';
+  }
+}
+
+testLuck(currentLuck) {
+  var heroValue = rollDice(0) + rollDice(0);
+  if (heroValue <= currentLuck) {}
+}
