@@ -67,7 +67,7 @@ class _TheWarlockState extends State<TheWarlock> {
                     top: 55,
                     left: 32,
                     child: Text(
-                      '10',
+                      '9',
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class _TheWarlockState extends State<TheWarlock> {
                     top: 55,
                     left: 32,
                     child: Text(
-                      '18',
+                      '12',
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
@@ -205,7 +205,7 @@ class _TheWarlockState extends State<TheWarlock> {
                     child: GestureDetector(
                       onTap: () {},
                       child: const Text(
-                        '11',
+                        '6',
                         style: TextStyle(
                           fontSize: 50,
                           fontWeight: FontWeight.bold,
