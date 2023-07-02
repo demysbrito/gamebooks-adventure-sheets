@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gamebooks_adventure_sheets/pages/the_warlock_of_firetop_mountain_battle.dart';
 import 'package:gamebooks_adventure_sheets/util/character_attributes.dart';
 
 class TheWarlockOfFiretopMountain extends StatefulWidget {
@@ -21,6 +22,7 @@ class _TheWarlockOfFiretopMountainState
   int goldValue = 0;
   int monsterSkill = 0;
   int monsterStamina = 0;
+  int currentMonsterStamina = 0;
   int currentHistory = 0;
 
   bool visibilityInitialStatus = true;
@@ -204,7 +206,14 @@ class _TheWarlockOfFiretopMountainState
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const TheWarlockOfFiretopMountainBattle(),
+                      ),
+                    );
+                  },
                   child: const Text('Roll for battle'),
                 ),
                 ElevatedButton(
@@ -223,6 +232,48 @@ class _TheWarlockOfFiretopMountainState
           ],
         ),
       ),
+      // bottomNavigationBar: AppBar(
+      //   toolbarHeight: 64,
+      //   bottom: PreferredSize(
+      //     preferredSize: const Size.fromHeight(64),
+      //     child: Container(
+      //       decoration: BoxDecoration(
+      //         color: Colors.white,
+      //         boxShadow: [
+      //           BoxShadow(
+      //             color: Colors.grey.withOpacity(0.3),
+      //             blurRadius: 8,
+      //             offset: const Offset(0, -3),
+      //           ),
+      //         ],
+      //       ),
+
+      //       child: Row(
+      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //         children: [
+      //           IconButton(
+      //             icon: const Icon(Icons.home),
+      //             onPressed: () {
+      //               // Ação ao pressionar o ícone "home"
+      //             },
+      //           ),
+      //           IconButton(
+      //             icon: const Icon(Icons.search),
+      //             onPressed: () {
+      //               // Ação ao pressionar o ícone "search"
+      //             },
+      //           ),
+      //           IconButton(
+      //             icon: const Icon(Icons.person),
+      //             onPressed: () {
+      //               // Ação ao pressionar o ícone "person"
+      //             },
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

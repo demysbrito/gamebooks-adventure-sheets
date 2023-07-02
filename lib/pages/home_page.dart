@@ -13,8 +13,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: const Color(0xFF14832C),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontFamily: 'Ringbearer',
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Center(
         child: ListView.builder(
@@ -24,7 +30,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Widget page = newBooks[index]['page'] as Widget;
 
             return ListTile(
-              title: Text(title),
+              title: Text(
+                title,
+                style: const TextStyle(fontFamily: 'Ringbearer'),
+              ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

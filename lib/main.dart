@@ -13,10 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF14832C),
+        ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Adventure Books Character Sheets'),
+      home: const MyHomePage(title: 'Fighting Fantasy Books'),
     );
   }
 }
