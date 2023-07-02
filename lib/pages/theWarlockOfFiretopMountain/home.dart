@@ -205,7 +205,7 @@ class _TheWarlockState extends State<TheWarlock> {
                     child: GestureDetector(
                       onTap: () {},
                       child: const Text(
-                        '7',
+                        '6',
                         style: TextStyle(
                           fontSize: 50,
                           fontWeight: FontWeight.bold,
