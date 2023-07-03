@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TheWarlockSkillWidget extends StatefulWidget {
-  const TheWarlockSkillWidget({super.key});
+  final int initialSkill;
+  final int currentSkill;
+
+  const TheWarlockSkillWidget(
+      {super.key, required this.initialSkill, required this.currentSkill});
 
   @override
   State<TheWarlockSkillWidget> createState() => _TheWarlockSkillWidgetState();
@@ -30,23 +34,23 @@ class _TheWarlockSkillWidgetState extends State<TheWarlockSkillWidget> {
             style: TextStyle(fontFamily: 'Heuristica'),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 30,
           left: 70,
           child: Text(
-            '10',
-            style: TextStyle(
+            widget.initialSkill.toString(),
+            style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF14832C)),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 55,
           left: 32,
           child: Text(
-            '9',
-            style: TextStyle(
+            widget.currentSkill.toString(),
+            style: const TextStyle(
               fontSize: 50,
               fontWeight: FontWeight.bold,
             ),
