@@ -1,16 +1,19 @@
-# gamebooks_adventure_sheets
+# Fighting Fantasy Books
 
-A new Flutter project.
+## Resumo
 
-## Getting Started
+A ideia do nosso projeto é desenvolver uma aplicação para que os amantes dos livros de anentura da Fighting Fantasy possam jogar mesmo que com apenas o livro e o celular.
 
-This project is a starting point for a Flutter application.
+### Features: <br/>
 
-A few resources to get you started if this is your first Flutter project:
+[ ] Listas de livros  
+[ ] Criação automatica de jogos  
+[ ] Simulação de rolagem de dados  
+[ ] Assistente para batalhas  
+[ ] Anotações  
+[ ] Salvar a referencia onde parou de jogar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Equipe de desenvolvimento:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Demys Brito
+- Mateus Pedroso
