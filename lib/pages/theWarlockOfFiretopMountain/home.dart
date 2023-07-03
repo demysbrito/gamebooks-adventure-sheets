@@ -241,6 +241,185 @@ class _TheWarlockState extends State<TheWarlock> {
               ),
             ],
           ),
+          const SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Stack(
+                alignment: const Alignment(-0.8, -0.7),
+                children: [
+                  Image.asset(
+                    'assets/images/ouro.png',
+                    width: 185,
+                    fit: BoxFit.fill,
+                  ),
+                  const Text(
+                    'Ouro',
+                    style: TextStyle(
+                      fontFamily: 'BlackChancery',
+                      fontSize: 20,
+                    ),
+                  ),
+                  const Positioned(
+                    left: 70,
+                    child: Text(
+                      '10',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: -2,
+                    top: -5,
+                    child: IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Positioned(
+                    right: -2,
+                    top: 20,
+                    child: IconButton(
+                      icon: const Icon(Icons.remove),
+                      onPressed: () {},
+                    ),
+                  )
+                ],
+              ),
+              Stack(
+                alignment: const Alignment(-0.8, -0.7),
+                children: [
+                  Image.asset(
+                    'assets/images/provisoes.png',
+                    width: 185,
+                    fit: BoxFit.fill,
+                  ),
+                  const Text(
+                    'Provisões',
+                    style: TextStyle(
+                      fontFamily: 'BlackChancery',
+                      fontSize: 20,
+                    ),
+                  ),
+                  const Positioned(
+                    left: 100,
+                    child: Text(
+                      '10',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: -2,
+                    top: -5,
+                    child: IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Positioned(
+                    right: -2,
+                    top: 20,
+                    child: IconButton(
+                      icon: const Icon(Icons.remove),
+                      onPressed: () {},
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Stack(
+                alignment: const Alignment(-0.6, -0.95),
+                children: [
+                  Image.asset(
+                    'assets/images/equipamentos.png',
+                    width: 185,
+                    fit: BoxFit.fill,
+                  ),
+                  const Text(
+                    'Equipamentos',
+                    style: TextStyle(
+                      fontFamily: 'BlackChancery',
+                      fontSize: 20,
+                    ),
+                  ),
+                  Positioned(
+                    right: -2,
+                    top: -5,
+                    child: IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Stack(
+                    alignment: const Alignment(-0.8, -0.9),
+                    children: [
+                      Image.asset(
+                        'assets/images/joias.png',
+                        width: 185,
+                        height: 206,
+                        fit: BoxFit.fill,
+                      ),
+                      const Text(
+                        'Jóias',
+                        style: TextStyle(
+                          fontFamily: 'BlackChancery',
+                          fontSize: 20,
+                        ),
+                      ),
+                      Positioned(
+                        right: -2,
+                        top: -5,
+                        child: IconButton(
+                          icon: const Icon(Icons.add),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  Stack(
+                    alignment: const Alignment(-0.8, -0.90),
+                    children: [
+                      Image.asset(
+                        'assets/images/pocoes.png',
+                        width: 185,
+                        fit: BoxFit.fill,
+                      ),
+                      const Text(
+                        'Poções',
+                        style: TextStyle(
+                          fontFamily: 'BlackChancery',
+                          fontSize: 20,
+                        ),
+                      ),
+                      Positioned(
+                        right: -2,
+                        top: -5,
+                        child: IconButton(
+                          icon: const Icon(Icons.add),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -251,23 +430,31 @@ class _TheWarlockState extends State<TheWarlock> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'assets/images/FFmain.png',
-              height: 30,
+              height: 45,
             ),
             label: 'Inicial',
             backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/images/swords.png',
-              height: 30,
+              'assets/images/color-swords.png',
+              height: 45,
             ),
             label: 'Batalhar',
             backgroundColor: const Color(0xFF14832C),
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/images/dice.png',
-              height: 30,
+              'assets/images/color-ancient-scroll.png',
+              height: 45,
+            ),
+            label: 'Anotações',
+            backgroundColor: const Color(0xFF14832C),
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/images/color-dice2.png',
+              height: 45,
             ),
             label: 'Jogar dados',
             backgroundColor: const Color(0xFF14832C),
