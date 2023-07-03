@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gamebooks_adventure_sheets/pages/the_warlock_of_firetop_mountain_battle.dart';
 import 'package:gamebooks_adventure_sheets/util/character_attributes.dart';
 
 class TheWarlockOfFiretopMountain extends StatefulWidget {
@@ -209,8 +208,7 @@ class _TheWarlockOfFiretopMountainState
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) =>
-                            const TheWarlockOfFiretopMountainBattle(),
+                        builder: (context) => Container(),
                       ),
                     );
                   },
