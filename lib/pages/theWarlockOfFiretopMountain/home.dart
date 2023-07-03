@@ -18,7 +18,9 @@ class TheWarlock extends StatefulWidget {
 class _TheWarlockState extends State<TheWarlock> {
   int currentIndex = 0;
   int initialSkill = 0;
+  int initialStamina = 0;
   int currentSkill = 0;
+  int currentStamina = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,10 @@ class _TheWarlockState extends State<TheWarlock> {
                 initialSkill: initialSkill,
                 currentSkill: currentSkill,
               ),
-              const TheWarlockStaminaWidget(),
+              TheWarlockStaminaWidget(
+                initialStamina: initialStamina,
+                currentStamina: currentStamina,
+              ),
               const TheWarlockLuckWidget(),
             ],
           ),

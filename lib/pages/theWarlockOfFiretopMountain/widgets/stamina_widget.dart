@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TheWarlockStaminaWidget extends StatefulWidget {
-  const TheWarlockStaminaWidget({super.key});
+  final int initialStamina;
+  final int currentStamina;
+  const TheWarlockStaminaWidget(
+      {super.key, required this.initialStamina, required this.currentStamina});
 
   @override
   State<TheWarlockStaminaWidget> createState() =>
@@ -31,23 +34,23 @@ class _TheWarlockStaminaWidgetState extends State<TheWarlockStaminaWidget> {
             style: TextStyle(fontFamily: 'Heuristica'),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 30,
           left: 70,
           child: Text(
-            '18',
-            style: TextStyle(
+            widget.initialStamina.toString(),
+            style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF14832C)),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 55,
           left: 32,
           child: Text(
-            '12',
-            style: TextStyle(
+            widget.currentStamina.toString(),
+            style: const TextStyle(
               fontSize: 50,
               fontWeight: FontWeight.bold,
             ),
