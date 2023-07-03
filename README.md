@@ -13,6 +13,10 @@ A ideia do nosso projeto é desenvolver uma aplicação para que os amantes dos 
 [ ] Anotações  
 [ ] Salvar a referencia onde parou de jogar
 
+### Livros Adicionados
+
+[ ] O Feiticeiro da montanha de fogo
+
 ### Equipe de desenvolvimento:
 
 - Demys Brito
