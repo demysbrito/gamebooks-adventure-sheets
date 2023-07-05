@@ -24,6 +24,9 @@ class _TheWarlockState extends State<TheWarlock> {
   int currentStamina = 0;
   int currentLuck = 0;
 
+  int initialSkill = 0;
+  int currentSkill = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
