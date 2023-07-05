@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TheWarlockSkillWidget extends StatefulWidget {
-  const TheWarlockSkillWidget({super.key});
+  const TheWarlockSkillWidget({
+    super.key,
+  });
 
   @override
   State<TheWarlockSkillWidget> createState() => _TheWarlockSkillWidgetState();
@@ -34,7 +36,7 @@ class _TheWarlockSkillWidgetState extends State<TheWarlockSkillWidget> {
           top: 30,
           left: 70,
           child: Text(
-            '10',
+            '0',
             style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -45,7 +47,7 @@ class _TheWarlockSkillWidgetState extends State<TheWarlockSkillWidget> {
           top: 55,
           left: 32,
           child: Text(
-            '9',
+            '0',
             style: TextStyle(
               fontSize: 50,
               fontWeight: FontWeight.bold,

@@ -18,6 +18,9 @@ class TheWarlock extends StatefulWidget {
 class _TheWarlockState extends State<TheWarlock> {
   int currentIndex = 0;
 
+  int initialSkill = 0;
+  int currentSkill = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
