@@ -32,7 +32,7 @@ class _TheWarlockSkillWidgetState extends State<TheWarlockSkillWidget> {
             style: TextStyle(fontFamily: 'Heuristica'),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 30,
           left: 70,
           child: Text(
@@ -43,7 +43,7 @@ class _TheWarlockSkillWidgetState extends State<TheWarlockSkillWidget> {
                 color: Color(0xFF14832C)),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 55,
           left: 32,
           child: Text(
