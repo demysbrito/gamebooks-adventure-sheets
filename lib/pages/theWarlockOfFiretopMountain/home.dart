@@ -17,15 +17,6 @@ class TheWarlock extends StatefulWidget {
 
 class _TheWarlockState extends State<TheWarlock> {
   int currentIndex = 0;
-  int initialSkill = 0;
-  int initialStamina = 0;
-  int initialLuck = 0;
-  int currentSkill = 0;
-  int currentStamina = 0;
-  int currentLuck = 0;
-
-  int initialSkill = 0;
-  int currentSkill = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -40,39 +31,30 @@ class _TheWarlockState extends State<TheWarlock> {
           ),
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const Text(
+          Text(
             'Ficha de Aventura',
             style: TextStyle(fontFamily: 'Ringbearer', fontSize: 30),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TheWarlockSkillWidget(
-                initialSkill: initialSkill,
-                currentSkill: currentSkill,
-              ),
-              TheWarlockStaminaWidget(
-                initialStamina: initialStamina,
-                currentStamina: currentStamina,
-              ),
-              TheWarlockLuckWidget(
-                initialLuck: initialLuck,
-                currentLuck: currentLuck,
-              ),
+              TheWarlockSkillWidget(),
+              TheWarlockStaminaWidget(),
+              TheWarlockLuckWidget(),
             ],
           ),
-          const SizedBox(height: 5),
-          const Row(
+          SizedBox(height: 5),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               TheWarlockGoldWidget(),
               TheWarlockProvisionsWidget(),
             ],
           ),
-          const SizedBox(height: 5),
-          const Row(
+          SizedBox(height: 5),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               TheWarlockEquipmentWidget(),

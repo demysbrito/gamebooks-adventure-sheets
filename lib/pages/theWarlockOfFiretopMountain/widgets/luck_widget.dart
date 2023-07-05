@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TheWarlockLuckWidget extends StatefulWidget {
-  final int initialLuck;
-  final int currentLuck;
-
-  const TheWarlockLuckWidget(
-      {super.key, required this.initialLuck, required this.currentLuck});
+  const TheWarlockLuckWidget({
+    super.key,
+  });
 
   @override
   State<TheWarlockLuckWidget> createState() => _TheWarlockLuckWidgetState();
@@ -34,12 +32,12 @@ class _TheWarlockLuckWidgetState extends State<TheWarlockLuckWidget> {
             style: TextStyle(fontFamily: 'Heuristica'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 30,
           left: 70,
           child: Text(
-            widget.initialLuck.toString(),
-            style: const TextStyle(
+            '0',
+            style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF14832C)),
@@ -50,9 +48,9 @@ class _TheWarlockLuckWidgetState extends State<TheWarlockLuckWidget> {
           left: 32,
           child: GestureDetector(
             onTap: () {},
-            child: Text(
-              widget.currentLuck.toString(),
-              style: const TextStyle(
+            child: const Text(
+              '0',
+              style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
               ),
