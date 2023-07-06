@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/util/home_controller.dart';
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/equipment_widget.dart';
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/gold_widget.dart';
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/jewels_widget.dart';
@@ -7,16 +8,10 @@ import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/wid
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/provisions_widget.dart';
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/skill_widget.dart';
 import 'package:gamebooks_adventure_sheets/pages/theWarlockOfFiretopMountain/widgets/stamina_widget.dart';
+import 'package:get/get.dart';
 
-class TheWarlock extends StatefulWidget {
-  const TheWarlock({super.key});
-
-  @override
-  State<TheWarlock> createState() => _TheWarlockState();
-}
-
-class _TheWarlockState extends State<TheWarlock> {
-  int currentIndex = 0;
+class TheWarlockPage extends GetView<HomeController> {
+  const TheWarlockPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,48 +26,56 @@ class _TheWarlockState extends State<TheWarlock> {
           ),
         ),
       ),
-      body: const Column(
+      body: const SafeArea(
+          child: IndexedStack(
+        index: controller.tabIndex,
         children: [
-          Text(
-            'Ficha de Aventura',
-            style: TextStyle(fontFamily: 'Ringbearer', fontSize: 30),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Column(
             children: [
-              TheWarlockSkillWidget(),
-              TheWarlockStaminaWidget(),
-              TheWarlockLuckWidget(),
-            ],
-          ),
-          SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TheWarlockGoldWidget(),
-              TheWarlockProvisionsWidget(),
-            ],
-          ),
-          SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TheWarlockEquipmentWidget(),
-              Column(
+              Text(
+                'Ficha de Aventura',
+                style: TextStyle(fontFamily: 'Ringbearer', fontSize: 30),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TheWarlockJewelsWidget(),
-                  SizedBox(height: 5),
-                  TheWarlockPotionsWidget(),
+                  TheWarlockSkillWidget(),
+                  TheWarlockStaminaWidget(),
+                  TheWarlockLuckWidget(),
                 ],
-              )
+              ),
+              SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TheWarlockGoldWidget(),
+                  TheWarlockProvisionsWidget(),
+                ],
+              ),
+              SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TheWarlockEquipmentWidget(),
+                  Column(
+                    children: [
+                      TheWarlockJewelsWidget(),
+                      SizedBox(height: 5),
+                      TheWarlockPotionsWidget(),
+                    ],
+                  )
+                ],
+              ),
             ],
           ),
         ],
-      ),
+      )),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
+        // type: BottomNavigationBarType.shifting,
+        onTap: controller.changeTabIndex,
+        currentIndex: controller.tabIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Image.asset(
